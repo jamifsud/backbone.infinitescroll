@@ -80,7 +80,7 @@
 
     // Hook into backbone
     Backbone.View = Backbone.View.extend({
-        constructor: function() {
+        constructor: function(options) {
             if (typeof this.events == undefined) { this.events = {}; }
             if (typeof this.infiniteScrollMethod == undefined) { this.infiniteScrollMethod = "loadNextPage" }
 
@@ -112,7 +112,7 @@
             }
 
             // Super
-            Backbone.View.__super__.constructor.call(this);
+            Backbone.View.__super__.constructor.call(this, options);
         }
     });
 
