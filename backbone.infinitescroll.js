@@ -79,6 +79,7 @@
     var monitors = {};
 
     // Hook into backbone
+    var old = Backbone.View.prototype;
     Backbone.View = Backbone.View.extend({
         constructor: function(options) {
             if (typeof this.events == undefined) { this.events = {}; }
@@ -111,8 +112,7 @@
                 }
             }
 
-            // Super
-            Backbone.View.__super__.constructor.call(this, options);
+            old.constructor.call(this, options);
         }
     });
 
